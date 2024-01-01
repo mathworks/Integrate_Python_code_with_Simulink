@@ -2,16 +2,12 @@
 % Setting up python installer and getting packages 
 % 1. install pip
 % 2. install opencv
-% 3. install imutils
 %
 % 1. intall pip (on Linux console)
 % sudo apt install python-pip
 %
 % 2. install opencv
 % python -m pip install opencv-python
-%
-% 3. install imutils
-% python -m pip install imutils
 
 % MATLAB may crash with python process - use "OutOfProcess" execution mode
 % could avoid that

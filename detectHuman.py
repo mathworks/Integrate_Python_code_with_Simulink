@@ -1,7 +1,7 @@
 import time
-import imutils
+# import imutils
 import numpy as np
-from cv2 import cv2
+import cv2
 
 
 class hogObject:
@@ -16,7 +16,10 @@ def getHogObject():
 
 def detectHumanFromFrame(image, hog):
     image = np.asarray(image)
-    image = imutils.resize(image, width=min(400, image.shape[1]))
+    # image = imutils.resize(image, width=min(400, image.shape[1]))
+    ratio = image.shape[0] / image.shape[1]
+    new_height = int(400 * ratio)
+    image = cv2.resize(image, (400,new_height))
 
     # Detecting all the regions in the Image that has a pedestrians inside it
     (regions, _) = hog.detector.detectMultiScale(
