@@ -2,19 +2,12 @@ import time
 # import imutils
 import numpy as np
 import cv2
+import hogClass
 
+def detectHumanFromFrame(image):
 
-class hogObject:
-    detector = cv2.HOGDescriptor()
-    def __init__(self):
-        self.detector.setSVMDetector(cv2.HOGDescriptor_getDefaultPeopleDetector())
-
-
-def getHogObject():
-    return hogObject()
-
-
-def detectHumanFromFrame(image, hog):
+    hog = hogClass.hogObject()
+    
     image = np.asarray(image)
     # image = imutils.resize(image, width=min(400, image.shape[1]))
     ratio = image.shape[0] / image.shape[1]
@@ -33,8 +26,6 @@ def detectHumanFromFrame(image, hog):
 
 
 if __name__ == "__main__":
-
-    hog = hogObject()
     
     cap = cv2.VideoCapture('livedata.mp4')
     ret, image = cap.read()

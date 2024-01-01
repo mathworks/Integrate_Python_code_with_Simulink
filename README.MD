@@ -29,7 +29,7 @@ This example shows users how to integrate Python Human detection code into Simul
 To use this example, 
 1. open and run the runme.m first in MATLAB; 
 2. Then start the base_python_example_21a.slx 
-3. Run simulaiton.   
+3. Run simulation.   
 
 
 ## Product dependencies

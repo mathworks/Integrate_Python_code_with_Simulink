@@ -1,0 +1,33 @@
+{
+  "SimulinkCodeImporterVersion": 1,
+  "LibraryFileName": "HumanDetection",
+  "CustomCode": {
+    "SourceFiles": ".\\detectHuman.py",
+    "GlobalVariableInterface": false
+  },
+  "FunctionsToImport": "detectHuman.detectHumanFromFrame",
+  "FunctionSettings": {
+    "Name": "detectHuman.detectHumanFromFrame",
+    "PortSpecArray": [
+      {
+        "ArgName": "image",
+        "PortName": "image",
+        "Scope": "Output",
+        "Index": "1",
+        "Type": "uint8",
+        "Size": "[300 400 3]",
+        "IsGlobal": false
+      },
+      {
+        "ArgName": "image",
+        "PortName": "image",
+        "Scope": "Input",
+        "Index": "1",
+        "Type": "uint8",
+        "Size": "[480 640 3]",
+        "IsGlobal": false
+      }
+    ],
+    "IsDeterministic": false
+  }
+}
