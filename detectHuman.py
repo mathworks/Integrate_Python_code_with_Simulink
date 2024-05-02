@@ -35,7 +35,7 @@ if __name__ == "__main__":
         # Reading the video stream
         ret, image = cap.read()
         if ret:
-            image = detectHumanFromFrame(image, hog)
+            image = detectHumanFromFrame(image)
             cv2.imshow("Image", image)
             cv2.waitKey(5)
             if cv2.waitKey(5) & 0xFF == ord('q'):

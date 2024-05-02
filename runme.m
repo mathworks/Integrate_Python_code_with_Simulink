@@ -7,7 +7,7 @@
 % sudo apt install python-pip
 %
 % 2. install opencv
-% python -m pip install opencv-python
+% python -m pip install numpy opencv-python
 
 % MATLAB may crash with python process - use "OutOfProcess" execution mode
 % could avoid that

@@ -1,9 +1,15 @@
-# Integrate Python Code into Simulink for Simulation
+# Integrate Python Code into Simulink for Simulation 
+
+[![Open in MATLAB Online](https://www.mathworks.com/images/responsive/global/open-in-matlab-online.svg)](https://matlab.mathworks.com/open/github/v1?repo=yanndebray/Integrate_Python_code_with_Simulink&file=README.mlx)
 
 📹 Integrate OpenCV into Simulink models through Python wrapper: 
 Simulation of a Human Detection Algorithm
 
 <img src="simCV.gif" width= 500 />
+
+```matlab
+open_system("base_python_example_23a.slx")
+```
 
 This example shows users how to integrate Python Human detection code into Simulink for simulation. This example reads a pre-recorded video, apply the human detection algorithm defined in Python and generate the outpur video with human marked. This example includes the following files:
 
