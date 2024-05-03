@@ -1,6 +1,6 @@
 # Integrate Python Code into Simulink for Simulation 
 
-[![Open in MATLAB Online](https://www.mathworks.com/images/responsive/global/open-in-matlab-online.svg)](https://matlab.mathworks.com/open/github/v1?repo=yanndebray/Integrate_Python_code_with_Simulink&file=README.mlx)
+[![Open in MATLAB Online](https://www.mathworks.com/images/responsive/global/open-in-matlab-online.svg)](https://matlab.mathworks.com/open/github/v1?repo=yanndebray/Integrate_Python_code_with_Simulink&project=pySimCV.prj&file=README.mlx)
 
 📹 Integrate OpenCV into Simulink models through Python wrapper: 
 Simulation of a Human Detection Algorithm
@@ -15,6 +15,7 @@ This example shows users how to integrate Python Human detection code into Simul
 
  * [runme.m](runme.m): This file provides the prep steps when using this example. Since the Python algorithm is based on OpenCV, you will need install the needed packages if they are not available on your computer. This file also helps set the "out of Process" execution mode to avoid possible MATLAB crashes. And it will also set the Python path to the current folder.  
 
+* [setup_python.m](setup_python.m): This script retrieves the necessary Python packages automatically to enable this demo in MATLAB Online.
 
 * [detectHuman.py](detectHuman.py): this file contains the Python algorithm using OpenCV Histogram of Oriented Gradients (HOG) for human detection. 
 
@@ -34,7 +35,7 @@ This example shows users how to integrate Python Human detection code into Simul
 
 To use this example, 
 1. open and run the runme.m first in MATLAB; 
-2. Then start the base_python_example_21a.slx 
+2. Then start the base_python_example_23a.slx 
 3. Run simulation.   
 
 
