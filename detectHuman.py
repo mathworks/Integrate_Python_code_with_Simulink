@@ -1,22 +1,18 @@
 import time
-import imutils
+# import imutils
 import numpy as np
-from cv2 import cv2
+import cv2
+import hogClass
 
+def detectHumanFromFrame(image):
 
-class hogObject:
-    detector = cv2.HOGDescriptor()
-    def __init__(self):
-        self.detector.setSVMDetector(cv2.HOGDescriptor_getDefaultPeopleDetector())
-
-
-def getHogObject():
-    return hogObject()
-
-
-def detectHumanFromFrame(image, hog):
+    hog = hogClass.hogObject()
+    
     image = np.asarray(image)
-    image = imutils.resize(image, width=min(400, image.shape[1]))
+    # image = imutils.resize(image, width=min(400, image.shape[1]))
+    ratio = image.shape[0] / image.shape[1]
+    new_height = int(400 * ratio)
+    image = cv2.resize(image, (400,new_height))
 
     # Detecting all the regions in the Image that has a pedestrians inside it
     (regions, _) = hog.detector.detectMultiScale(
@@ -30,8 +26,6 @@ def detectHumanFromFrame(image, hog):
 
 
 if __name__ == "__main__":
-
-    hog = hogObject()
     
     cap = cv2.VideoCapture('livedata.mp4')
     ret, image = cap.read()
@@ -41,7 +35,7 @@ if __name__ == "__main__":
         # Reading the video stream
         ret, image = cap.read()
         if ret:
-            image = detectHumanFromFrame(image, hog)
+            image = detectHumanFromFrame(image)
             cv2.imshow("Image", image)
             cv2.waitKey(5)
             if cv2.waitKey(5) & 0xFF == ord('q'):

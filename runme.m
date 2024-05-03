@@ -2,21 +2,24 @@
 % Setting up python installer and getting packages 
 % 1. install pip
 % 2. install opencv
-% 3. install imutils
 %
 % 1. intall pip (on Linux console)
 % sudo apt install python-pip
 %
 % 2. install opencv
-% python -m pip install opencv-python
-%
-% 3. install imutils
-% python -m pip install imutils
+% python -m pip install numpy opencv-python
 
 % MATLAB may crash with python process - use "OutOfProcess" execution mode
 % could avoid that
-pyenv("ExecutionMode","OutOfProcess");
-    
+p = pyenv;
+if p.Status ~= "Loaded"
+    pyenv("ExecutionMode","OutOfProcess");
+end
+
+if system('pip --version') == 127 % pip: command not found
+    setup_python
+end
+
 py.importlib.import_module('detectHuman');
 
 pathToPyfun = fileparts(which('detectHuman.py'));
